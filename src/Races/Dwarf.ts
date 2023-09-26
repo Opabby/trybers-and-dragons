@@ -1,9 +1,12 @@
+import { privateDecrypt } from 'crypto';
 import Race from './Race';
 
 class Dwarf extends Race {
+    private static maxLifePoints: number;
     private static instanceCount = 0;
     constructor(name: string, dexterity: number) {
         super(name, dexterity);
+        Dwarf.maxLifePoints = 80;
         Dwarf.instanceCount++;
     }
 
@@ -12,7 +15,7 @@ class Dwarf extends Race {
     }
     
     get maxLifePoints(): number {
-        return 80;
+        return Dwarf.maxLifePoints;
     }
 }
 
