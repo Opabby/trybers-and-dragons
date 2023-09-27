@@ -96,8 +96,21 @@ class Character implements Fighter{
         this._lifePoints = this._maxLifePoints;
     }
 
-    special(): void {
-        
+    special(enemy: Fighter): void {
+        const specialAttackPower = this._strength * 2;
+    
+        if (this._energy.amount >= 2) {
+            this._energy.amount -= 2;
+    
+            const damage = specialAttackPower - enemy.defense;
+            if (damage > 0) {
+                enemy.receiveDamage(damage);
+            } else {
+                enemy.receiveDamage(1);
+            }
+        } else {
+            console.log("Energia insuficiente para o ataque especial");
+        }
     }
 }
 
