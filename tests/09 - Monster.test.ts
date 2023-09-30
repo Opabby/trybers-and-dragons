@@ -20,6 +20,6 @@ describe('09 - Classe Monster', () => {
     expect('Monster.attack').toCompile();
   });
   it('Um Character pode atacar um Monster, e o Monster receberá de dano o valor do atributo strength do Character que o ataca', () => {
-    expect('Monster.receiveAttack').toCompile();
+    expect('Monster.receiveDamage').toCompile();
   });
 });
